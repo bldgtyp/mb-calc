@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Briefcase-Version: 0.3.25
+Name: mb_calc
+Formal-Name: MB Calc
+App-ID: com.bldgtyp.mb-calc
+Version: 0.1.0
+Home-page: https://github.com/bldgtyp/mb-calc
+Download-URL: https://github.com/bldgtyp/mb-calc
+Author: PH Tools
+Author-email: phtools@bldgtyp.com
+Summary: Lightweight macOS menu-bar calculator.

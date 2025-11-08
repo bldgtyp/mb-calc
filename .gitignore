@@ -8,3 +8,8 @@ wheels/
 
 # Virtual environments
 .venv
+
+# Apple
+*.certSigningRequest
+*.cer
+*.p8

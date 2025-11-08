@@ -4,11 +4,11 @@ version = "0.1.0"
 description = "A lightweight macOS menu-bar calculator."
 readme = "README.md"
 authors = [{ name = "PH Tools", email = "phtools@bldgtyp.com" }]
-requires-python = ">=3.14"
+requires-python = ">=3.13"
 dependencies = ["rumps>=0.4.0"]
 
 [project.scripts]
-mb-calc = "mb_calc:main"
+mb-calc = "mb_calc.__main__:main"
 
 [build-system]
 requires = ["uv_build>=0.9.1,<0.10.0"]
@@ -23,6 +23,7 @@ dev = [
     "pytest>=8.3.0",
     "coverage>=7.11.1",
     "pytest-cov>=7.0.0",
+    "briefcase>=0.3.18",
 ]
 
 [tool.black]
@@ -47,7 +48,7 @@ quote-style = "double"
 indent-style = "space"
 
 [tool.mypy]
-python_version = "3.14"
+python_version = "3.13"
 warn_unused_configs = true
 disallow_untyped_defs = true
 disallow_incomplete_defs = true
@@ -55,3 +56,23 @@ no_implicit_optional = true
 strict_equality = true
 ignore_missing_imports = true
 show_error_codes = true
+
+[tool.briefcase]
+project_name = "MB Calc"
+bundle = "com.bldgtyp"
+version = "0.1.0"
+url = "https://github.com/bldgtyp/mb-calc"
+license = { text = "Proprietary" }
+author = "PH Tools"
+author_email = "phtools@bldgtyp.com"
+
+[tool.briefcase.app.mb_calc]
+formal_name = "MB Calc"
+description = "Lightweight macOS menu-bar calculator."
+sources = ["src/mb_calc"]
+requires = ["rumps>=0.4.0"]
+requirement_installer_args = ["--find-links", "vendor/wheels"]
+
+[tool.briefcase.app.mb_calc.macOS]
+requires = []
+plist_entries = { LSUIElement = true }

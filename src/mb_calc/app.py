@@ -193,7 +193,7 @@ class ToolbarApp(rumps.App):
         self._split_delegate = _SplitViewDelegate.alloc().initWithRatios_(self._minimum_split_widths())
         self._context_menu_handler = _ContextMenuHandler.alloc().initWithApp_(self)
         self._panel = self._build_panel()
-        self._activation_policy = NSApplication.sharedApplication().activationPolicy()
+        NSApplication.sharedApplication().setActivationPolicy_(NSApplicationActivationPolicyAccessory)
         self._ensure_edit_menu()
         self._ensure_window_menu()
         self._status_icon = _load_status_icon()
@@ -314,8 +314,9 @@ class ToolbarApp(rumps.App):
 
     def toggle_panel(self) -> None:
         if self._panel.isVisible():
+            ns_app = NSApplication.sharedApplication()
+            ns_app.setActivationPolicy_(NSApplicationActivationPolicyAccessory)
             self._panel.orderOut_(None)
-            NSApplication.sharedApplication().setActivationPolicy_(self._activation_policy)
             return
 
         self._position_panel()
