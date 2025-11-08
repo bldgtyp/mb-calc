@@ -1,6 +1,6 @@
 [project]
 name = "mb-calc"
-version = "0.1.0"
+version = "0.1.01"
 description = "A lightweight macOS menu-bar calculator."
 readme = "README.md"
 authors = [{ name = "PH Tools", email = "phtools@bldgtyp.com" }]
