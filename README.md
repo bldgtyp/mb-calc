@@ -2,7 +2,7 @@
 
 ![Python](https://img.shields.io/badge/Python-3.x-3776AB?logo=python&logoColor=white)
 ![Python 3.13](https://img.shields.io/badge/Python-3.13-3776AB?logo=python&logoColor=white)
-![Tests](https://github.com/bldgtyp/mb-calc/actions/workflows/publish.yml/badge.svg)
+![Tests](https://github.com/bldgtyp/mb-calc/actions/workflows/run_tests.yml/badge.svg)
 ![LLM Generated](https://img.shields.io/badge/LLM-Generated-8A2BE2)
 
 > Portions of this project were generated with AI assistance (GitHub Copilot).
