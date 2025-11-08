@@ -72,6 +72,7 @@ description = "Lightweight macOS menu-bar calculator."
 sources = ["src/mb_calc"]
 requires = ["rumps>=0.4.0"]
 requirement_installer_args = ["--find-links", "vendor/wheels"]
+icon = "src/mb_calc/resources/mbcalc"
 
 [tool.briefcase.app.mb_calc.macOS]
 requires = []
