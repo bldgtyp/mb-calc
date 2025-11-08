@@ -1,5 +1,12 @@
 # Menubar-Calculator
 
+![Python](https://img.shields.io/badge/Python-3.x-3776AB?logo=python&logoColor=white)
+![Python 3.13](https://img.shields.io/badge/Python-3.13-3776AB?logo=python&logoColor=white)
+![Tests](https://github.com/bldgtyp/mb-calc/actions/workflows/publish.yml/badge.svg)
+![LLM Generated](https://img.shields.io/badge/LLM-Generated-8A2BE2)
+
+> Portions of this project were generated with AI assistance (GitHub Copilot).
+
 Lightweight macOS menu-bar calculator. The app is triggered through the status bar and opens a split-view editor for inputs and results. Built using [rumps](https://github.com/jaredks/rumps), the Ridiculously Uncomplicated macOS Python Statusbar framework.
 
 <img width="636" height="293" alt="mb-calc" src="https://github.com/user-attachments/assets/919d8a69-68f6-4ef5-974b-3cd5d065cf05" />
