@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import ast
 import math
+import re
 from collections.abc import Callable, Iterable, Mapping, Sequence
 from dataclasses import dataclass
 from typing import Final, Protocol
@@ -90,6 +91,9 @@ def _build_default_config() -> EvaluationConfig:
 _DEFAULT_CONFIG: Final[EvaluationConfig] = _build_default_config()
 
 
+_COMMA_IN_NUMBER = re.compile(r"(?<=\d),(?=\d)")
+
+
 class _ExpressionEvaluator:
     """Recursively walk the AST and compute a numeric result."""
 
@@ -160,8 +164,10 @@ def evaluate_expression(expression: str, *, config: EvaluationConfig | None = No
     if not stripped:
         raise ValueError("Expression cannot be empty")
 
+    normalized = _COMMA_IN_NUMBER.sub("", stripped)
+
     evaluator = _ExpressionEvaluator(config or _DEFAULT_CONFIG)
-    return evaluator.evaluate(stripped)
+    return evaluator.evaluate(normalized)
 
 
 def evaluate_lines(lines: Iterable[str]) -> Sequence[float | None]:

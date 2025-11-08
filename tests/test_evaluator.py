@@ -21,6 +21,10 @@ def test_evaluate_expression_with_abs_function() -> None:
     assert evaluate_expression("abs(-3)") == pytest.approx(3.0)
 
 
+def test_evaluate_expression_supports_grouped_numbers() -> None:
+    assert evaluate_expression("1,000 * 5") == pytest.approx(5_000.0)
+
+
 @pytest.mark.parametrize(
     "expression",
     [

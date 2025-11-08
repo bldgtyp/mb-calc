@@ -25,3 +25,11 @@ def test_update_results_splits_input() -> None:
 
 def test_render_results_handles_infinite_numbers() -> None:
     assert render_results(["1e309", "-1e309"]) == ["inf", "-inf"]
+
+
+def test_render_results_supports_commas_in_input_and_output() -> None:
+    assert render_results(["1,000 * 5"]) == ["5,000"]
+
+
+def test_render_results_formats_large_floats_with_grouping() -> None:
+    assert render_results(["1234.5"]) == ["1,234.5"]

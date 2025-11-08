@@ -35,9 +35,9 @@ def _format_number(value: float) -> str:
         return str(value)
 
     if value.is_integer():
-        return str(int(value))
+        return format(int(value), ",d")
 
-    return format(value, "g")
+    return format(value, ",g")
 
 
 __all__ = ["render_results"]
